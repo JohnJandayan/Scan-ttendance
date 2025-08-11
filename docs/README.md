@@ -179,7 +179,7 @@ Help us improve by providing feedback on:
 This documentation is part of the Scan-ttendance project and is licensed under the MIT License. See the [LICENSE](../LICENSE) file for details.
 
 ### Credits
-- **Primary Author**: [Your Name] - Initial documentation and ongoing maintenance
+- **Primary Author**: [John Jandayan](https://github.com/JohnJandayan) - Initial documentation and ongoing maintenance
 - **Contributors**: See [CONTRIBUTING.md](../CONTRIBUTING.md) for contributor guidelines
 - **Community**: Thanks to all users who provide feedback and improvements
 

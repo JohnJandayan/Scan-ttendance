@@ -1,6 +1,7 @@
 import { render, screen } from '@testing-library/react'
 import { describe, it, expect } from 'vitest'
 import Footer from '@/components/layout/Footer'
+import { vi } from 'zod/locales'
 
 // Mock Next.js Link component
 vi.mock('next/link', () => ({
@@ -52,7 +53,7 @@ describe('Footer Component', () => {
     render(<Footer />)
     
     expect(screen.getByText('Developed by')).toBeInTheDocument()
-    expect(screen.getByText('Your Name')).toBeInTheDocument()
+    expect(screen.getByText('John Jandayan')).toBeInTheDocument()
   })
 
   it('has correct href attributes for links', () => {
@@ -60,7 +61,7 @@ describe('Footer Component', () => {
     
     const featuresLink = screen.getByText('Features').closest('a')
     const aboutLink = screen.getByText('About').closest('a')
-    const developerLink = screen.getByText('Your Name').closest('a')
+    const developerLink = screen.getByText('John Jandayan').closest('a')
     
     expect(featuresLink).toHaveAttribute('href', '/features')
     expect(aboutLink).toHaveAttribute('href', '/about')

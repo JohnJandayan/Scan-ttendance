@@ -98,12 +98,12 @@ export default function Footer() {
               <p className="text-sm md:text-base text-gray-600">
                 Developed by{' '}
                 <a 
-                  href="https://github.com/yourusername" 
+                  href="https://github.com/JohnJandayan" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className={`${styles.touchTarget} text-indigo-600 hover:text-indigo-700 font-medium transition-colors duration-200 inline-block py-1`}
                 >
-                  Your Name
+                  John Jandayan
                 </a>
               </p>
             </div>
