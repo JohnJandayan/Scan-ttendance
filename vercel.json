@@ -119,7 +119,7 @@
   ],
   "trailingSlash": false,
   "cleanUrls": true,
-  "regions": ["iad1", "sfo1"],
+  "regions": ["sin1"],
   "crons": [
     {
       "path": "/api/cron/cleanup",

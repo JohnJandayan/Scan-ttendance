@@ -15,29 +15,34 @@ A modern, QR code-based attendance tracking application designed for events and 
 ## ✨ Features
 
 ### 🏢 Organization Management
+
 - **Multi-tenant Architecture**: Each organization has its own isolated database schema
 - **Member Management**: Role-based access control with admin, manager, and viewer roles
 - **Organization Dashboard**: Comprehensive overview of events, statistics, and activities
 
 ### 📅 Event Management
+
 - **Event Creation**: Easy event setup with attendee import via CSV or manual entry
 - **Event Lifecycle**: Active and archived event states with proper access controls
 - **Real-time Statistics**: Live attendance tracking and analytics
 - **Event Settings**: Comprehensive event configuration and management tools
 
 ### 📱 QR Code Scanning
+
 - **Mobile-Optimized Scanner**: Responsive camera interface for all devices
 - **Real-time Verification**: Instant attendee verification with immediate feedback
 - **Duplicate Detection**: Prevents multiple check-ins for the same attendee
 - **Offline Capability**: Scan caching for unreliable network conditions
 
 ### 📊 Attendance Tracking
+
 - **Real-time Updates**: Live attendance statistics and participant lists
 - **Export Functionality**: Download attendance records in multiple formats
 - **Scan History**: Comprehensive log of all verification attempts
 - **Performance Analytics**: Detailed attendance metrics and insights
 
 ### 🔒 Security & Performance
+
 - **JWT Authentication**: Secure session management with refresh tokens
 - **Input Validation**: Comprehensive data sanitization and validation
 - **Rate Limiting**: API protection against abuse and spam
@@ -46,6 +51,7 @@ A modern, QR code-based attendance tracking application designed for events and 
 ## 🚀 Technology Stack
 
 ### Frontend
+
 - **[Next.js 15.4.6](https://nextjs.org/)** - React framework with App Router
 - **[React 19.1.0](https://reactjs.org/)** - UI library with latest features
 - **[TypeScript](https://www.typescriptlang.org/)** - Type-safe development
@@ -53,6 +59,7 @@ A modern, QR code-based attendance tracking application designed for events and 
 - **[React Hook Form](https://react-hook-form.com/)** - Form management and validation
 
 ### Backend
+
 - **[Express.js 5.1.0](https://expressjs.com/)** - Serverless API routes
 - **[Supabase 2.54.0](https://supabase.com/)** - PostgreSQL database with real-time features
 - **[JWT 9.0.2](https://jwt.io/)** - Secure authentication tokens
@@ -62,12 +69,14 @@ A modern, QR code-based attendance tracking application designed for events and 
 - **[CORS 2.8.5](https://github.com/expressjs/cors)** - Cross-origin resource sharing
 
 ### QR Code & Camera
+
 - **[@zxing/browser 0.1.5](https://github.com/zxing-js/browser)** - QR code scanning library
 - **[@zxing/library 0.21.3](https://github.com/zxing-js/library)** - Core QR code processing
 - **MediaDevices API** - Camera access and management
 - **Canvas API** - Image processing and manipulation
 
 ### Testing & Quality
+
 - **[Vitest 3.2.4](https://vitest.dev/)** - Unit and integration testing
 - **[Playwright 1.49.1](https://playwright.dev/)** - End-to-end testing
 - **[React Testing Library 16.3.0](https://testing-library.com/react)** - Component testing
@@ -75,6 +84,7 @@ A modern, QR code-based attendance tracking application designed for events and 
 - **[Supertest 7.0.0](https://github.com/visionmedia/supertest)** - API testing
 
 ### Deployment & DevOps
+
 - **[Vercel](https://vercel.com/)** - Serverless deployment platform
 - **[GitHub Actions](https://github.com/features/actions)** - CI/CD pipeline
 - **[Docker](https://www.docker.com/)** - Containerization (optional)
@@ -82,6 +92,7 @@ A modern, QR code-based attendance tracking application designed for events and 
 ## 🏗️ Architecture
 
 ### Database Schema Design
+
 ```
 Public Schema:
 ├── organizations          # Organization accounts
@@ -95,6 +106,7 @@ Organization-Specific Schema (org_[name]):
 ```
 
 ### API Structure
+
 ```
 /api/
 ├── auth/                 # Authentication endpoints
@@ -121,23 +133,27 @@ Organization-Specific Schema (org_[name]):
 ## 🛠️ Installation & Setup
 
 ### Prerequisites
+
 - **Node.js** 18.x or 20.x
 - **npm** or **yarn**
 - **PostgreSQL** database (or Supabase account)
 - **Git**
 
 ### 1. Clone the Repository
+
 ```bash
 git clone https://github.com/yourusername/scan-ttendance.git
 cd scan-ttendance
 ```
 
 ### 2. Install Dependencies
+
 ```bash
 npm install
 ```
 
 ### 3. Environment Configuration
+
 Create a `.env.local` file in the root directory:
 
 ```env
@@ -156,6 +172,7 @@ NODE_ENV=development
 ```
 
 ### 4. Database Setup
+
 ```bash
 # Run database migrations
 npm run db:migrate
@@ -165,6 +182,7 @@ npm run db:seed
 ```
 
 ### 5. Start Development Server
+
 ```bash
 npm run dev
 ```
@@ -174,6 +192,7 @@ Open [http://localhost:3000](http://localhost:3000) to view the application.
 ## 📋 Available Scripts
 
 ### Development
+
 ```bash
 npm run dev          # Start development server
 npm run build        # Build for production
@@ -184,6 +203,7 @@ npm run format       # Format code with Prettier
 ```
 
 ### Testing
+
 ```bash
 npm run test              # Run unit tests
 npm run test:watch        # Run tests in watch mode
@@ -198,6 +218,7 @@ npm run test:integration  # Run integration tests only
 ```
 
 ### Database
+
 ```bash
 npm run db:migrate   # Run database migrations
 npm run db:seed      # Seed database with test data
@@ -214,6 +235,7 @@ The application includes a comprehensive test suite covering:
 - **Performance Tests**: QR scanning and database operation benchmarks
 
 ### Test Coverage
+
 - **Branches**: 80%+
 - **Functions**: 80%+
 - **Lines**: 80%+
@@ -317,9 +339,11 @@ We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) f
 ### Authentication Endpoints
 
 #### POST /api/auth/register
+
 Register a new organization account.
 
 **Request Body:**
+
 ```json
 {
   "name": "John Doe",
@@ -330,6 +354,7 @@ Register a new organization account.
 ```
 
 **Response:**
+
 ```json
 {
   "success": true,
@@ -342,9 +367,11 @@ Register a new organization account.
 ```
 
 #### POST /api/auth/login
+
 Authenticate user credentials.
 
 **Request Body:**
+
 ```json
 {
   "email": "john@example.com",
@@ -355,14 +382,17 @@ Authenticate user credentials.
 ### Event Management Endpoints
 
 #### POST /api/events
+
 Create a new event.
 
 **Headers:**
+
 ```
 Authorization: Bearer jwt-token-here
 ```
 
 **Request Body:**
+
 ```json
 {
   "name": "Annual Conference",
@@ -375,9 +405,11 @@ Authorization: Bearer jwt-token-here
 ```
 
 #### POST /api/events/[id]/verify
+
 Verify attendee with QR code.
 
 **Request Body:**
+
 ```json
 {
   "participantId": "ID001"
@@ -385,6 +417,7 @@ Verify attendee with QR code.
 ```
 
 **Response:**
+
 ```json
 {
   "success": true,
@@ -400,9 +433,11 @@ Verify attendee with QR code.
 ### Organization Management Endpoints
 
 #### GET /api/org/dashboard
+
 Get organization dashboard with statistics and recent activity.
 
 **Response:**
+
 ```json
 {
   "success": true,
@@ -419,9 +454,11 @@ Get organization dashboard with statistics and recent activity.
 ```
 
 #### POST /api/org/members
+
 Add new organization member with role-based access.
 
 **Request:**
+
 ```json
 {
   "name": "Jane Smith",
@@ -433,23 +470,25 @@ Add new organization member with role-based access.
 ### Event Management Endpoints
 
 #### POST /api/events
+
 Create new event with attendee list.
 
 **Request:**
+
 ```json
 {
   "name": "Tech Conference 2024",
   "description": "Annual technology conference",
-  "attendees": [
-    { "name": "Alice Johnson", "participantId": "TECH001" }
-  ]
+  "attendees": [{ "name": "Alice Johnson", "participantId": "TECH001" }]
 }
 ```
 
 #### POST /api/events/[id]/verify
+
 Verify attendee with QR code scan.
 
 **Request:**
+
 ```json
 {
   "participantId": "TECH001"
@@ -457,6 +496,7 @@ Verify attendee with QR code scan.
 ```
 
 **Response:**
+
 ```json
 {
   "success": true,
@@ -485,7 +525,7 @@ const config = {
   database: process.env.DB_NAME,
   username: process.env.DB_USER,
   password: process.env.DB_PASSWORD,
-  ssl: process.env.NODE_ENV === 'production'
+  ssl: process.env.NODE_ENV === 'production',
 }
 ```
 
@@ -499,7 +539,7 @@ const jwtConfig = {
   secret: process.env.JWT_SECRET,
   expiresIn: '24h',
   refreshExpiresIn: '7d',
-  algorithm: 'HS256'
+  algorithm: 'HS256',
 }
 ```
 
@@ -514,13 +554,13 @@ const scannerConfig = {
     video: {
       width: { ideal: 1280 },
       height: { ideal: 720 },
-      facingMode: 'environment'
-    }
+      facingMode: 'environment',
+    },
   },
   decodeHints: new Map([
     [DecodeHintType.TRY_HARDER, true],
-    [DecodeHintType.POSSIBLE_FORMATS, [BarcodeFormat.QR_CODE]]
-  ])
+    [DecodeHintType.POSSIBLE_FORMATS, [BarcodeFormat.QR_CODE]],
+  ]),
 }
 ```
 
@@ -567,6 +607,7 @@ const scannerConfig = {
 ### Common Issues
 
 #### Database Connection Errors
+
 ```bash
 # Check PostgreSQL service
 sudo service postgresql status
@@ -576,13 +617,16 @@ psql $DATABASE_URL
 ```
 
 #### Camera Access Issues
+
 ```javascript
 // Check browser permissions
-navigator.permissions.query({ name: 'camera' })
+navigator.permissions
+  .query({ name: 'camera' })
   .then(result => console.log(result.state))
 ```
 
 #### Build Errors
+
 ```bash
 # Clear Next.js cache
 rm -rf .next
@@ -619,6 +663,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ### Technical Expertise Demonstrated
 
 #### Frontend Development
+
 - **Modern React Architecture**: Utilizing React 19.1.0 with latest features and patterns
 - **Next.js App Router**: Leveraging Next.js 15.4.6 for optimal performance and SEO
 - **TypeScript Mastery**: Strict type safety throughout the entire application
@@ -626,18 +671,21 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - **Real-time UI**: WebSocket integration for live updates and notifications
 
 #### Backend Development
+
 - **Serverless Architecture**: Express.js 5.1.0 API routes optimized for Vercel deployment
 - **Database Design**: Multi-tenant PostgreSQL architecture with dynamic schema creation
 - **Authentication & Security**: JWT-based auth with bcrypt hashing and comprehensive security middleware
 - **API Design**: RESTful APIs with proper error handling and validation using Zod
 
 #### DevOps & Testing
+
 - **Comprehensive Testing**: Unit, integration, and E2E testing with Vitest and Playwright
 - **CI/CD Pipeline**: Automated testing and deployment workflows
 - **Performance Optimization**: Code splitting, caching strategies, and database indexing
 - **Production Deployment**: Vercel deployment with environment management
 
 #### Advanced Features
+
 - **QR Code Technology**: Camera API integration with @zxing libraries for real-time scanning
 - **Real-time Capabilities**: Supabase real-time subscriptions for live attendance tracking
 - **Data Export**: Multiple format support (CSV, Excel, PDF) for attendance reports
@@ -661,6 +709,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ### Portfolio Context
 
 This project represents a complete end-to-end solution that would be suitable for:
+
 - **Enterprise Event Management**: Large-scale conferences and corporate events
 - **Educational Institutions**: Student attendance tracking and campus events
 - **Healthcare Organizations**: Patient check-in and appointment management
@@ -685,6 +734,7 @@ Interested in discussing this project or exploring collaboration opportunities?
 ### Open Source Contribution
 
 This project demonstrates commitment to:
+
 - **Code Quality**: ESLint, Prettier, and strict TypeScript configuration
 - **Community Standards**: Comprehensive README, contributing guidelines, and documentation
 - **Best Practices**: Security, performance, and accessibility considerations

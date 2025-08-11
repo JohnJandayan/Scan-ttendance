@@ -1,6 +1,6 @@
 import { describe, it, expect, beforeEach, vi } from 'vitest'
 import jwt from 'jsonwebtoken'
-import bcrypt from 'bcryptjs'
+import * as bcrypt from 'bcryptjs'
 import {
   hashPassword,
   comparePassword,

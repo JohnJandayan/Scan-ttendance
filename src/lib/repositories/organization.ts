@@ -2,7 +2,7 @@ import { BaseRepository } from './base'
 import { Organization, OrganizationCreate, DatabaseResult, PaginatedResult, OrganizationCreateSchema, OrganizationSchema } from '../../types'
 import { validateData } from '../validation'
 import { DatabaseService } from '../database'
-import bcrypt from 'bcryptjs'
+import * as bcrypt from 'bcryptjs'
 
 export class OrganizationRepository extends BaseRepository {
   /**
