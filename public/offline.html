@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Offline - Scan-ttendance</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9fafb;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+        
+        .offline-container {
+            text-align: center;
+            padding: 2rem;
+            max-width: 400px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        
+        .offline-icon {
+            width: 64px;
+            height: 64px;
+            margin: 0 auto 1.5rem;
+            background-color: #fef3c7;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .offline-icon svg {
+            width: 32px;
+            height: 32px;
+            color: #f59e0b;
+        }
+        
+        h1 {
+            color: #111827;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        p {
+            color: #6b7280;
+            margin-bottom: 1.5rem;
+            line-height: 1.5;
+        }
+        
+        .retry-button {
+            background-color: #4f46e5;
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        
+        .retry-button:hover {
+            background-color: #4338ca;
+        }
+        
+        .offline-features {
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #e5e7eb;
+        }
+        
+        .offline-features h2 {
+            color: #111827;
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        .offline-features ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .offline-features li {
+            color: #6b7280;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .offline-features li::before {
+            content: '✓';
+            color: #10b981;
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="offline-container">
+        <div class="offline-icon">
+            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192L5.636 18.364M12 2.25a9.75 9.75 0 100 19.5 9.75 9.75 0 000-19.5z" />
+            </svg>
+        </div>
+        
+        <h1>You're Offline</h1>
+        <p>No internet connection detected. Don't worry - you can still scan QR codes and they'll be synced when you're back online.</p>
+        
+        <button class="retry-button" onclick="window.location.reload()">
+            Try Again
+        </button>
+        
+        <div class="offline-features">
+            <h2>Available Offline</h2>
+            <ul>
+                <li>Scan QR codes</li>
+                <li>Cache scan results</li>
+                <li>View cached events</li>
+                <li>Auto-sync when online</li>
+            </ul>
+        </div>
+    </div>
+    
+    <script>
+        // Check for online status
+        function checkOnlineStatus() {
+            if (navigator.onLine) {
+                window.location.reload()
+            }
+        }
+        
+        // Listen for online event
+        window.addEventListener('online', checkOnlineStatus)
+        
+        // Check periodically
+        setInterval(checkOnlineStatus, 5000)
+    </script>
+</body>
+</html>

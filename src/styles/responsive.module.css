@@ -1,0 +1,272 @@
+/* Responsive Design System */
+
+/* Mobile-first breakpoints */
+.container {
+  @apply w-full px-4;
+}
+
+@media (min-width: 640px) {
+  .container {
+    @apply px-6;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    @apply px-8;
+  }
+}
+
+@media (min-width: 1280px) {
+  .container {
+    @apply max-w-7xl mx-auto;
+  }
+}
+
+/* Touch-friendly interface elements */
+.touchTarget {
+  @apply min-h-[44px] min-w-[44px];
+}
+
+.touchButton {
+  @apply min-h-[48px] px-6 py-3 text-base;
+}
+
+@media (min-width: 768px) {
+  .touchButton {
+    @apply min-h-[40px] px-4 py-2 text-sm;
+  }
+}
+
+/* Mobile-optimized forms */
+.mobileForm {
+  @apply space-y-6;
+}
+
+.mobileFormField {
+  @apply w-full;
+}
+
+.mobileInput {
+  @apply w-full px-4 py-3 text-base border border-gray-300 rounded-lg;
+  @apply focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500;
+  @apply transition-colors duration-200;
+}
+
+@media (min-width: 768px) {
+  .mobileInput {
+    @apply px-3 py-2 text-sm;
+  }
+}
+
+/* Mobile navigation */
+.mobileNav {
+  @apply fixed inset-x-0 top-0 z-50 bg-white shadow-lg;
+  @apply transform transition-transform duration-300 ease-in-out;
+}
+
+.mobileNavOpen {
+  @apply translate-y-0;
+}
+
+.mobileNavClosed {
+  @apply -translate-y-full;
+}
+
+/* Mobile-optimized cards */
+.mobileCard {
+  @apply bg-white rounded-lg shadow-sm border border-gray-200;
+  @apply p-4 space-y-4;
+}
+
+@media (min-width: 768px) {
+  .mobileCard {
+    @apply p-6 space-y-6;
+  }
+}
+
+/* Mobile-optimized tables */
+.mobileTable {
+  @apply w-full;
+}
+
+.mobileTableRow {
+  @apply border-b border-gray-200 py-4;
+}
+
+@media (min-width: 768px) {
+  .mobileTable {
+    @apply table;
+  }
+  
+  .mobileTableRow {
+    @apply table-row border-b py-0;
+  }
+}
+
+/* Mobile-optimized modals */
+.mobileModal {
+  @apply fixed inset-0 z-50 overflow-y-auto;
+}
+
+.mobileModalContent {
+  @apply min-h-screen px-4 py-6;
+}
+
+@media (min-width: 768px) {
+  .mobileModalContent {
+    @apply min-h-0 p-0 flex items-center justify-center;
+  }
+}
+
+.mobileModalPanel {
+  @apply w-full bg-white rounded-t-xl;
+}
+
+@media (min-width: 768px) {
+  .mobileModalPanel {
+    @apply max-w-lg rounded-xl;
+  }
+}
+
+/* Camera interface optimizations */
+.cameraContainer {
+  @apply fixed inset-0 bg-black z-50;
+}
+
+.cameraVideo {
+  @apply w-full h-full object-cover;
+}
+
+.cameraOverlay {
+  @apply absolute inset-0 flex items-center justify-center;
+}
+
+.cameraFrame {
+  @apply border-2 border-white border-dashed rounded-lg;
+  @apply w-64 h-64;
+}
+
+@media (min-width: 768px) {
+  .cameraFrame {
+    @apply w-80 h-80;
+  }
+}
+
+/* Mobile-optimized dashboard */
+.dashboardGrid {
+  @apply grid grid-cols-1 gap-4;
+}
+
+@media (min-width: 640px) {
+  .dashboardGrid {
+    @apply grid-cols-2 gap-6;
+  }
+}
+
+@media (min-width: 1024px) {
+  .dashboardGrid {
+    @apply grid-cols-3;
+  }
+}
+
+/* Mobile-optimized statistics */
+.statsGrid {
+  @apply grid grid-cols-1 gap-4;
+}
+
+@media (min-width: 640px) {
+  .statsGrid {
+    @apply grid-cols-2;
+  }
+}
+
+@media (min-width: 768px) {
+  .statsGrid {
+    @apply grid-cols-3;
+  }
+}
+
+/* Mobile-optimized event cards */
+.eventCardGrid {
+  @apply grid grid-cols-1 gap-4;
+}
+
+@media (min-width: 640px) {
+  .eventCardGrid {
+    @apply grid-cols-2;
+  }
+}
+
+@media (min-width: 1024px) {
+  .eventCardGrid {
+    @apply grid-cols-3;
+  }
+}
+
+/* Responsive text sizes */
+.responsiveHeading {
+  @apply text-2xl font-bold;
+}
+
+@media (min-width: 640px) {
+  .responsiveHeading {
+    @apply text-3xl;
+  }
+}
+
+@media (min-width: 1024px) {
+  .responsiveHeading {
+    @apply text-4xl;
+  }
+}
+
+.responsiveSubheading {
+  @apply text-lg font-semibold;
+}
+
+@media (min-width: 640px) {
+  .responsiveSubheading {
+    @apply text-xl;
+  }
+}
+
+@media (min-width: 1024px) {
+  .responsiveSubheading {
+    @apply text-2xl;
+  }
+}
+
+/* Mobile-optimized spacing */
+.responsiveSpacing {
+  @apply space-y-4;
+}
+
+@media (min-width: 768px) {
+  .responsiveSpacing {
+    @apply space-y-6;
+  }
+}
+
+@media (min-width: 1024px) {
+  .responsiveSpacing {
+    @apply space-y-8;
+  }
+}
+
+/* Mobile-optimized padding */
+.responsivePadding {
+  @apply p-4;
+}
+
+@media (min-width: 768px) {
+  .responsivePadding {
+    @apply p-6;
+  }
+}
+
+@media (min-width: 1024px) {
+  .responsivePadding {
+    @apply p-8;
+  }
+}
