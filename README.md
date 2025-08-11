@@ -1,5 +1,7 @@
 # Scan-ttendance
 
+A modern, QR code-based attendance tracking application designed for events and organizations. Built with Next.js, Express.js, and PostgreSQL, Scan-ttendance provides a seamless solution for managing event attendance through QR code scanning technology.
+
 [![Next.js](https://img.shields.io/badge/Next.js-15.4.6-black?style=flat-square&logo=next.js)](https://nextjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.x-blue?style=flat-square&logo=typescript)](https://www.typescriptlang.org/)
 [![React](https://img.shields.io/badge/React-19.1.0-blue?style=flat-square&logo=react)](https://reactjs.org/)
@@ -9,8 +11,6 @@
 [![Playwright](https://img.shields.io/badge/Playwright-1.49.1-red?style=flat-square&logo=playwright)](https://playwright.dev/)
 [![Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=flat-square&logo=vercel)](https://vercel.com/)
 [![License](https://img.shields.io/badge/License-MIT-yellow?style=flat-square)](LICENSE)
-
-A modern, QR code-based attendance tracking application designed for events and organizations. Built with Next.js, Express.js, and PostgreSQL, Scan-ttendance provides a seamless solution for managing event attendance through QR code scanning technology.
 
 ## ✨ Features
 
