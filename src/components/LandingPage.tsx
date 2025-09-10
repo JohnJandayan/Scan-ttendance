@@ -300,14 +300,30 @@ const LandingPage: React.FC = () => {
           >
             {organizationLogos.map((org, index) => {
               const LogoElement = (
-                <div className="flex items-center justify-center h-20 md:h-28 lg:h-32" style={{ minWidth: '120px' }}>
+                <div 
+                  className="flex items-center justify-center h-20 md:h-28 lg:h-32" 
+                  style={{ 
+                    minWidth: '120px',
+                    ...org.positioning && {
+                      marginTop: org.positioning.marginTop,
+                      marginBottom: org.positioning.marginBottom,
+                      marginLeft: org.positioning.marginLeft,
+                      marginRight: org.positioning.marginRight,
+                      paddingTop: org.positioning.paddingTop,
+                      paddingBottom: org.positioning.paddingBottom,
+                      paddingLeft: org.positioning.paddingLeft,
+                      paddingRight: org.positioning.paddingRight,
+                    }
+                  }}
+                >
                   <motion.img 
                     key={org.id}
                     src={org.image} 
                     alt={org.alt} 
                     className="max-h-full max-w-full hover:scale-110 transition-transform duration-300 cursor-pointer object-contain"
                     style={{ 
-                      display: 'block'
+                      display: 'block',
+                      ...org.positioning?.transform && { transform: org.positioning.transform }
                     }}
                     whileHover={{ scale: 1.1 }}
                     initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
