@@ -23,6 +23,7 @@ import {
   Send,
   Loader2
 } from 'lucide-react'
+import { organizationLogos } from '../config/organizationLogos'
 
 const LandingPage: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false)
@@ -290,24 +291,50 @@ const LandingPage: React.FC = () => {
             <p className="text-gray-600 font-medium">Trusted by university organizations</p>
           </motion.div>
           <motion.div 
-            className="flex items-center justify-center space-x-12 opacity-60 hover:opacity-100 transition-opacity duration-500"
+            className="flex flex-col sm:flex-row items-center justify-center gap-8 sm:gap-12 md:gap-16 lg:gap-20 transition-all duration-500"
+            style={{ alignItems: 'center' }}
             initial={{ opacity: 0, scale: 0.8 }}
-            whileInView={{ opacity: 0.6, scale: 1 }}
+            whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <motion.img 
-              src="/logo-techcorp.svg" 
-              alt="TechCorp Logo" 
-              className="h-12 hover:scale-110 transition-transform duration-300"
-              whileHover={{ scale: 1.1 }}
-            />
-            <motion.img 
-              src="/logo-innovatelab.svg" 
-              alt="InnovateLab Solutions Logo" 
-              className="h-12 hover:scale-110 transition-transform duration-300"
-              whileHover={{ scale: 1.1 }}
-            />
+            {organizationLogos.map((org, index) => {
+              const LogoElement = (
+                <div className="flex items-center justify-center h-20 md:h-28 lg:h-32" style={{ minWidth: '120px' }}>
+                  <motion.img 
+                    key={org.id}
+                    src={org.image} 
+                    alt={org.alt} 
+                    className="max-h-full max-w-full hover:scale-110 transition-transform duration-300 cursor-pointer object-contain"
+                    style={{ 
+                      display: 'block'
+                    }}
+                    whileHover={{ scale: 1.1 }}
+                    initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: index * 0.2 }}
+                  />
+                </div>
+              )
+
+              // If the organization has a website, wrap the logo in a link
+              return org.website ? (
+                <motion.a
+                  key={org.id}
+                  href={org.website}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title={`Visit ${org.name}`}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  {LogoElement}
+                </motion.a>
+              ) : (
+                LogoElement
+              )
+            })}
           </motion.div>
         </div>
       </section>
