@@ -496,7 +496,7 @@ const LandingPage: React.FC = () => {
               </h2>
               <p className="text-lg text-gray-600 mb-6">
                 A passionate full-stack developer and Computer Science student at Caraga State University. 
-                Specialized in React, Next.js, and modern web technologies with a focus on creating 
+                Specialized in React, Django, and modern web technologies with a focus on creating 
                 efficient, user-friendly solutions.
               </p>
               <div className="space-y-4">
@@ -518,7 +518,7 @@ const LandingPage: React.FC = () => {
                   transition={{ duration: 0.6, delay: 0.2 }}
                 >
                   <Star className="h-5 w-5 text-blue-600" />
-                  <span className="text-gray-700">React & Next.js Expert</span>
+                  <span className="text-gray-700">React & Django Expert</span>
                 </motion.div>
                 <motion.div 
                   className="flex items-center space-x-3"
@@ -600,7 +600,7 @@ const LandingPage: React.FC = () => {
                       whileHover={{ scale: 1.05 }}
                       transition={{ type: "spring", stiffness: 400, damping: 10 }}
                     >
-                      <div className="text-2xl font-bold text-blue-600">20+</div>
+                      <div className="text-2xl font-bold text-blue-600">6+</div>
                       <div className="text-gray-600">Projects</div>
                     </motion.div>
                     <motion.div 
@@ -608,8 +608,8 @@ const LandingPage: React.FC = () => {
                       whileHover={{ scale: 1.05 }}
                       transition={{ type: "spring", stiffness: 400, damping: 10 }}
                     >
-                      <div className="text-2xl font-bold text-green-600">3+</div>
-                      <div className="text-gray-600">Years Experience</div>
+                      <div className="text-2xl font-bold text-green-600">14+</div>
+                      <div className="text-gray-600">Months Experience</div>
                     </motion.div>
                   </div>
                 </div>
